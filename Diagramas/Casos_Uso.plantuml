@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+actor jugador as jg
+
+package Game{
+    usecase "jugar" as UC1
+    usecase "Iniciar juego" as UC2
+    usecase "Disparar" as UC3
+    usecase "Obtener puntaje" as UC4
+    usecase "Destruir naves" as UC5
+}
+
+jg --> UC1
+UC1 <|-- UC2
+UC1 <|-- UC3
+UC1 <|-- UC4
+UC1 <|-- UC5
+@enduml
