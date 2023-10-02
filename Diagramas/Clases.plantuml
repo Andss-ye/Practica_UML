@@ -1,8 +1,8 @@
 @startuml
 left to right direction
 abstract Carta
-Carta <|-- CartaFrancesa
-Carta <|-- CartaEspanola
+Mazo <|-- MazoFrances
+Mazo <|-- Mazoespanol
 Mazo o-- Carta
 Juego -- Mazo
 
