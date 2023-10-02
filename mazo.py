@@ -42,9 +42,8 @@ class MazoEspanol(Mazo):
 if __name__ == '__main__':
     mazo = MazoEspanol()
     jugador = Mazo(True)
-    jugador.cartas.append[mazo.entregar_carta()]
-    jugador.cartas.append[mazo.entregar_carta()]
+    jugador.cartas.append(mazo.entregar_carta())
+    jugador.cartas.append(mazo.entregar_carta())
 
     jugador.mostrar_cartas()
     print(jugador.obtener_valor_mazo())
-    
