@@ -14,6 +14,9 @@ class BlackjackGUI:
         self.juego = Juego(MazoFrances())
         self.juego.iniciar_juego()
 
+        self.texto_valor_jugador = self.canvas.create_text(200, 900, text="", anchor='w')
+        self.texto_valor_casa = self.canvas.create_text(200, 470, text="", anchor='w')
+
         self.cargar_imagenes()
         
         self.jugar_button = tk.Button(root, text="Jugar", command=self.jugar)
@@ -23,6 +26,9 @@ class BlackjackGUI:
         self.valorar_button.pack()
 
     def cargar_imagenes(self):
+        self.canvas.delete(self.texto_valor_jugador)
+        self.canvas.delete(self.texto_valor_casa)
+
         self.imagenes_cartas_jugador = []
         self.imagenes_cartas_casa = []
         for carta in self.juego.jugador2.cartas:
@@ -47,11 +53,11 @@ class BlackjackGUI:
 
         # Muestra el valor de la mano del jugador
         valor_jugador = self.juego.jugador2.obtener_valor_mazo()
-        self.canvas.create_text(200, 900, text=f"Valor del Jugador: {valor_jugador}")
+        self.texto_valor_jugador = self.canvas.create_text(200, 900, text=f"Valor del Jugador: {valor_jugador}", anchor='w')
 
         # Muestra el valor de la mano de la casa
         valor_casa = self.juego.jugador1.obtener_valor_mazo()
-        self.canvas.create_text(200, 470, text=f"Valor de la Casa: {valor_casa}")
+        self.texto_valor_casa = self.canvas.create_text(200, 470, text=f"Valor de la Casa: {valor_casa}", anchor='w')
 
     def jugar(self):
         self.juego.jugar()
